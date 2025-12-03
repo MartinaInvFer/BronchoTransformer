@@ -15,7 +15,7 @@ from model import SequentialPoseTransformer
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 print(f"Usando dispositivo: {DEVICE}")
 
-ROOT_DIR = "data/VirtualNavigations"
+ROOT_DIR = "data/VirtualNavigations" #Pon la ruta correcta (si es que la hiciste diferente)
 BATCH_SIZE = 16
 LEARNING_RATE = 1e-5
 EPOCHS = 50
