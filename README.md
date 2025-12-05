@@ -56,3 +56,12 @@ BronchoTransformer/
 │       │   ├── Frames/
 │       │   └── P1_r1_to_3.csv
 │       ├── ...
+```
+## Preparación del Dataset
+1. Clonar el repositorio:
+git clone [https://github.com/tu-usuario/BronchoTransformer.git](https://github.com/tu-usuario/BronchoTransformer.git)
+cd BronchoTransformer
+2. Instalar dependencias: Se recomienda usar un entorno virtual (conda o venv). Ejecuta el siguiente comando para instalar las librerías necesarias:
+pip install torch torchvision timm numpy pandas matplotlib opencv-python tqdm
+
+## Estructura del proyecto
