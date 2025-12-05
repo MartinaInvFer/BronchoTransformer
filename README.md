@@ -57,7 +57,7 @@ BronchoTransformer/
 │       │   └── P1_r1_to_3.csv
 │       ├── ...
 ```
-## Preparación del Dataset
+## Instalación
 1. Clonar el repositorio:
 git clone [https://github.com/tu-usuario/BronchoTransformer.git](https://github.com/tu-usuario/BronchoTransformer.git)
 cd BronchoTransformer
@@ -65,3 +65,22 @@ cd BronchoTransformer
 pip install torch torchvision timm numpy pandas matplotlib opencv-python tqdm
 
 ## Estructura del proyecto
+model.py: Define la arquitectura SequentialPoseTransformer.
+dataset.py: Clase BronchoscopyDataset para cargar secuencias de imágenes y etiquetas de pose.
+train.py: Script principal para entrenar el modelo. Incluye Early Stopping y guardado de checkpoints.
+evaluate_metrics.py: Calcula el Error de Posición (mm) y el Error de Dirección (Grados) en el set de prueba.
+plotlosses.py: Utilidad para graficar las curvas de pérdida de entrenamiento y validación.
+
+## Uso
+
+Entrenamiento:
+Para entrenar el modelo desde cero, ejecuta el script train.py. Puedes ajustar los hiperparámetros (batch size, epochs, learning rate) editando la sección de configuración dentro del archivo.
+
+Esto generará:
+bronco_model.pth: El archivo con los pesos del modelo entrenado.
+loss_curve.png: Gráfica de la evolución del entrenamiento.
+
+## Evaluación
+Para evaluar el desempeño del modelo con las métricas del estado del arte, utiliza evaluate_metrics.py.
+
+Nota sobre la Métrica de Dirección: Este script asume que el eje óptico de la cámara virtual corresponde al Eje X local (+1, 0, 0), basado en un análisis geométrico del dataset BronchoPose. El error de dirección se calcula ignorando la rotación sobre el propio eje (roll), priorizando el vector de vista hacia la trayectoria bronquial.
