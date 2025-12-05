@@ -18,8 +18,6 @@ A diferencia de los métodos tradicionales que utilizan redes recurrentes (RNNs)
 - [Uso](#uso)
   - [Entrenamiento](#entrenamiento)
   - [Evaluación](#evaluación)
-- [Resultados](#resultados)
-- [Referencias](#referencias)
 
 ---
 
